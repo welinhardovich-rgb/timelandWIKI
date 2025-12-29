@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initScrollAnimations();
     initHeaderBlur();
+    initCarousel();
 });
 
 function initParticles() {
     const particlesContainer = document.getElementById('particles');
-    const particleCount = 30;
+    const particleCount = 35;
 
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
@@ -18,7 +19,7 @@ function initParticles() {
         particle.style.animationDelay = Math.random() * 15 + 's';
         particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
         
-        const sizes = [3, 4, 5, 6];
+        const sizes = [3, 4, 5, 6, 7];
         particle.style.width = sizes[Math.floor(Math.random() * sizes.length)] + 'px';
         particle.style.height = particle.style.width;
         
@@ -116,7 +117,7 @@ function initMobileMenu() {
         <button class="mobile-menu-close" aria-label="Закрыть">&times;</button>
         <nav>
             <a href="#hero">Главная</a>
-            <a href="#about">О сервере</a>
+            <a href="#features">О сервере</a>
             <a href="#rules">Правила</a>
             <a href="#donate">Донат</a>
         </nav>
@@ -165,9 +166,9 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.rules-category, .donate-card, .social-card, .ip-card').forEach(el => {
+    document.querySelectorAll('.rules-category, .donate-card, .social-card, .ip-card, .feature-card').forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
+        el.style.transform = 'translateY(40px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
@@ -192,11 +193,83 @@ function initHeaderBlur() {
         if (currentScroll > 100) {
             header.style.background = 'rgba(10, 10, 10, 0.95)';
         } else {
-            header.style.background = 'rgba(10, 10, 10, 0.8)';
+            header.style.background = 'rgba(10, 10, 10, 0.85)';
         }
 
         lastScroll = currentScroll;
     });
+}
+
+function initCarousel() {
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    const dotsContainer = document.getElementById('carouselDots');
+    
+    if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+    
+    const cards = track.querySelectorAll('.feature-card');
+    const totalCards = cards.length;
+    let currentIndex = 0;
+    let autoPlayInterval;
+    
+    function createDots() {
+        for (let i = 0; i < totalCards; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
+    
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+    
+    function goToSlide(index) {
+        currentIndex = index;
+        if (currentIndex >= totalCards) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = totalCards - 1;
+        updateCarousel();
+        resetAutoPlay();
+    }
+    
+    function nextSlide() {
+        goToSlide(currentIndex + 1);
+    }
+    
+    function prevSlide() {
+        goToSlide(currentIndex - 1);
+    }
+    
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 4000);
+    }
+    
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+    
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoPlay();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoPlay();
+    });
+    
+    track.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    track.addEventListener('mouseleave', startAutoPlay);
+    
+    createDots();
+    startAutoPlay();
 }
 
 console.log('Timeland website loaded successfully');

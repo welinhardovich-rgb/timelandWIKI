@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timeland — Vanilla сервер с сюжетом</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,7 +17,7 @@
             <div class="logo">Timeland</div>
             <ul class="nav-links">
                 <li><a href="#hero">Главная</a></li>
-                <li><a href="#about">О сервере</a></li>
+                <li><a href="#features">О сервере</a></li>
                 <li><a href="#rules">Правила</a></li>
                 <li><a href="#donate">Донат</a></li>
             </ul>
@@ -36,18 +39,75 @@
 
     <main>
         <section id="hero" class="hero">
+            <div class="hero-glow"></div>
             <div class="hero-content">
-                <h1 class="hero-title">Timeland</h1>
+                <h1 class="hero-title">
+                    <span class="title-gradient">Timeland</span>
+                </h1>
                 <p class="hero-subtitle">Vanilla + моды с собственным сюжетом</p>
                 <p class="hero-description">Погрузись в уникальный мир, где каждый шаг наполнен тайнами и приключениями. Создай свою историю в нашем атмосферном сообществе.</p>
                 <div class="hero-cta">
-                    <a href="#about" class="btn btn-primary">Узнать больше</a>
+                    <a href="#features" class="btn btn-primary">Узнать больше</a>
                     <a href="#donate" class="btn btn-secondary">Поддержать</a>
                 </div>
             </div>
             <div class="hero-scroll">
                 <div class="scroll-indicator"></div>
                 <span>Листайте вниз</span>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">Почему Timeland?</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                            </div>
+                            <h3>Добрая и отзывчивая администрация</h3>
+                            <p>На TimeLand всегда царит дружеская атмосфера. Команда следит за порядком, помогает игрокам и делает игру комфортной. Мы не живём на картошке, зато живём идеей — сделать лучший сервер!</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                            </div>
+                            <h3>Сервер растёт и развивается</h3>
+                            <p>TimeLand активно растёт, и каждый игрок может стать частью этого. Приглашай друзей или поддержи сервер покупкой доната — помоги нам развиваться вместе!</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <h3>Качественная сборка и уникальные моды</h3>
+                            <p>Наш сервер собран с любовью. Мы используем оптимизированные моды, чтобы обеспечить баланс, стабильность и интересную игру без лагов.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4v16h16M4 20l4-4 4 4 8-8"></path></svg>
+                            </div>
+                            <h3>Постоянные обновления</h3>
+                            <p>Мы регулярно добавляем новые возможности, улучшения и ивенты, чтобы тебе всегда было интересно возвращаться в мир TimeLand!</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </div>
+                            <h3>Дружное сообщество</h3>
+                            <p>Здесь каждый игрок важен. На сервере уже сложилось приятное сообщество, где можно найти друзей и весело провести время.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn prev" id="carouselPrev" aria-label="Предыдущий">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"></path></svg>
+                        </button>
+                        <div class="carousel-dots" id="carouselDots"></div>
+                        <button class="carousel-btn next" id="carouselNext" aria-label="Следующий">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"></path></svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -215,7 +275,7 @@
                         </ul>
                     </div>
 
-                    <div class="rules-category">
+                    <div class="rules-category rules-category-right">
                         <h3 class="rules-category-title">Экономика</h3>
                         <ul class="rules-list">
                             <li class="rule-item">
@@ -317,7 +377,7 @@
                 </div>
                 <div class="footer-links">
                     <a href="#hero">Главная</a>
-                    <a href="#about">О сервере</a>
+                    <a href="#features">О сервере</a>
                     <a href="#rules">Правила</a>
                     <a href="#donate">Донат</a>
                 </div>
