@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Timeland - Лучший Minecraft сервер с уникальными возможностями. Присоединяйся к нашему сообществу!">
+    <meta name="description" content="Timeland - Minecraft сервер Vanilla+ с модами и собственным сюжетом.">
     <title>Timeland - Minecraft Server</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="particles" id="particles"></div>
@@ -21,6 +18,7 @@
             <div class="nav-links">
                 <a href="#about" class="nav-link">О сервере</a>
                 <a href="#donate" class="nav-link">Донат</a>
+                <a href="#rules" class="nav-link">Правила</a>
                 <a href="https://discord.gg/2cwh6qDW" target="_blank" class="nav-link">Discord</a>
                 <a href="https://boosty.to/timelanddev/" target="_blank" class="nav-link">Boosty</a>
             </div>
@@ -36,14 +34,14 @@
         <div class="hero-bg"></div>
         <div class="hero-content">
             <h1 class="hero-title" data-text="TIMELAND">TIMELAND</h1>
-            <p class="hero-subtitle">ПОГРУЗИСЬ В МИР ПРИКЛЮЧЕНИЙ</p>
+            <p class="hero-subtitle">Vanilla+ сервер с модами и собственным сюжетом</p>
             <div class="hero-buttons">
                 <button class="btn btn-primary" onclick="copyIP()">
-                    <span class="btn-text">Подключиться</span>
+                    <span class="btn-text">Копировать IP</span>
                     <span class="btn-glow"></span>
                 </button>
-                <a href="#about" class="btn btn-secondary">
-                    <span class="btn-text">Узнать больше</span>
+                <a href="#rules" class="btn btn-secondary">
+                    <span class="btn-text">Правила</span>
                     <span class="btn-glow"></span>
                 </a>
             </div>
@@ -107,33 +105,32 @@
     <section class="donate" id="donate">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Донат привилегии</h2>
+                <h2 class="section-title">Донат и Спонсорство</h2>
                 <div class="section-divider"></div>
-                <p class="section-description">Поддержи сервер и получи эксклюзивные возможности</p>
+                <p class="section-description">Стань частью нашей истории и поддержи сервер</p>
             </div>
             <div class="donate-grid">
                 <div class="donate-card" data-aos="zoom-in">
-                    <div class="donate-badge">Популярный</div>
-                    <div class="donate-icon">👑</div>
+                    <div class="donate-badge">Спонсор</div>
+                    <div class="donate-icon">💎</div>
                     <h3 class="donate-title">Спонсор</h3>
                     <div class="donate-price">
                         <span class="price-amount">175</span>
                         <span class="price-currency">₽</span>
                     </div>
                     <ul class="donate-features">
-                        <li>✨ Эксклюзивный статус</li>
-                        <li>🎨 Уникальные возможности</li>
-                        <li>⭐ Поддержка проекта</li>
-                        <li>🔥 Особые привилегии</li>
+                        <li>✨ Поддержка развития сервера</li>
+                        <li>🌟 Особый статус в сообществе</li>
+                        <li>📜 Доступ к эксклюзивным новостям</li>
                     </ul>
                     <a href="https://boosty.to/timelanddev/" target="_blank" class="btn btn-donate">
-                        <span class="btn-text">Получить</span>
+                        <span class="btn-text">Купить</span>
                         <span class="btn-glow"></span>
                     </a>
                 </div>
 
                 <div class="donate-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="donate-icon">✏️</div>
+                    <div class="donate-icon">🏷️</div>
                     <h3 class="donate-title">Кастомный титул</h3>
                     <div class="donate-price">
                         <span class="price-amount">10</span>
@@ -141,12 +138,11 @@
                     </div>
                     <ul class="donate-features">
                         <li>📝 Свой уникальный титул</li>
-                        <li>🎯 Персонализация</li>
-                        <li>💎 Выделись среди других</li>
-                        <li>🌟 Доступная цена</li>
+                        <li>🎯 Персонализация персонажа</li>
+                        <li>💎 Неограниченная фантазия</li>
                     </ul>
                     <a href="https://boosty.to/timelanddev/" target="_blank" class="btn btn-donate">
-                        <span class="btn-text">Получить</span>
+                        <span class="btn-text">Купить</span>
                         <span class="btn-glow"></span>
                     </a>
                 </div>
@@ -154,32 +150,57 @@
         </div>
     </section>
 
-    <section class="features">
+    <section class="rules" id="rules">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Почему Timeland?</h2>
+                <h2 class="section-title">Правила сервера</h2>
                 <div class="section-divider"></div>
             </div>
-            <div class="features-grid">
-                <div class="feature-item" data-aos="fade-right">
-                    <div class="feature-number">01</div>
-                    <h3 class="feature-title">Уникальный геймплей</h3>
-                    <p class="feature-text">Насладись особенными механиками и режимами игры</p>
+            <div class="rules-container">
+                <div class="rules-category" data-aos="fade-up">
+                    <h3 class="category-title">1. Игровой и дискорд чат</h3>
+                    <ul class="rules-list">
+                        <li><span>1.1</span> Запрещено оскорбление игроков, администрации, а также родственников их всех. <br><small>Наказание: Мут от 60 минут до 3 часов.</small></li>
+                        <li><span>1.2</span> Запрещено спамить/флудить <br><small>Наказание: Мут от 10 минут до 30 минут.</small></li>
+                        <li><span>1.3</span> Запрещено угрожать кому то баном или мутом без причины. <br><small>Наказание: Мут 30 минут.</small></li>
+                        <li><span>1.4</span> Запрещено выдавать себя за участника администрации. <br><small>Наказание: Мут 2 часа.</small></li>
+                        <li><span>1.5</span> Разрешено само оскорбление.</li>
+                        <li><span>1.6</span> Личный, личный дискорд, голосовой чат не модерируются.</li>
+                        <li><span>1.7</span> Запрещено воспроизводить резкие и не приятные звуки (Орать в микрофон и т.п) <br><small>Наказание: Мут от 10 минут до 30.</small></li>
+                        <li><span>1.7.1</span> Запрещено использование войс мода. <br><small>Наказание: Мут от 25 минут до 45.</small></li>
+                        <li><span>1.8</span> Запрещена реклама других серверов в профиле <br><small>Наказание: Бан из дск</small></li>
+                    </ul>
                 </div>
-                <div class="feature-item" data-aos="fade-right" data-aos-delay="100">
-                    <div class="feature-number">02</div>
-                    <h3 class="feature-title">Дружное сообщество</h3>
-                    <p class="feature-text">Присоединись к активному и дружелюбному комьюнити</p>
+
+                <div class="rules-category" data-aos="fade-up">
+                    <h3 class="category-title">2. Общие вопросы</h3>
+                    <ul class="rules-list">
+                        <li><span>2.1</span> Запрещена кража ресурсов (Кроме взятия в долг). <br><small>Наказание: Бан от 1 дня до 3 дней.</small></li>
+                        <li><span>2.2</span> Запрещено просто так убивать игроков (Во время афк, без причины и всё тому подобное). <br><small>Наказание: Бан 1 день.</small></li>
+                        <li><span>2.3</span> Запрещено таргетить или охотится на игроков. <br><small>Наказание: Бан 1 день.</small></li>
+                        <li><span>2.4</span> Запрещено строить лаг машины. <br><small>Наказание: Бан до 1 сезона.</small></li>
+                        <li><span>2.4.1</span> Запрещено строить механизмы которые будут мешать работе сервера. <br><small>Наказание: Бан до 1 сезона.</small></li>
+                        <li><span>2.5</span> Запрещено строить пенисы и т.д <br><small>Наказание: Бан 3 дня</small></li>
+                        <li><span>2.6</span> Запрещено ломать лорные постройки. <br><small>Наказание: Бан на 1 день | Исключение: Разрешено ЛУТАТЬ лорные постройки.</small></li>
+                    </ul>
                 </div>
-                <div class="feature-item" data-aos="fade-right" data-aos-delay="200">
-                    <div class="feature-number">03</div>
-                    <h3 class="feature-title">Стабильность</h3>
-                    <p class="feature-text">Наслаждайся игрой без лагов и перебоев</p>
+
+                <div class="rules-category" data-aos="fade-up">
+                    <h3 class="category-title">3. Игровой процесс</h3>
+                    <ul class="rules-list">
+                        <li><span>3.1</span> Запрещено использование/хранение читов/программ которые сильно упрощают игровой процесс. <br><small>Наказание: В зависимости от чита, и от урона который он принёс.</small> <br>
+                            <small>Список читов/программ: X-Ray, всё что начинается с Auto (Auto Aim и т.д), Baritone и всё т.п.</small> <br>
+                            <small>Исключения: Full Bright (Gamma) и Freecam</small>
+                        </li>
+                    </ul>
                 </div>
-                <div class="feature-item" data-aos="fade-right" data-aos-delay="300">
-                    <div class="feature-number">04</div>
-                    <h3 class="feature-title">Регулярные обновления</h3>
-                    <p class="feature-text">Новый контент и улучшения каждую неделю</p>
+
+                <div class="rules-category" data-aos="fade-up">
+                    <h3 class="category-title">4. Экономика</h3>
+                    <ul class="rules-list">
+                        <li><span>4.1</span> Главный экономический ресурс (Валюта) определяется самими игроками, также их может быть несколько.</li>
+                        <li><span>4.2</span> Запрещён обман игроков на ресурсы или на эконом. ресурс. <br><small>Наказание: Бан от 1 дня до 4 дней.</small></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -190,7 +211,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3 class="footer-title">TIMELAND</h3>
-                    <p class="footer-text">Лучший Minecraft сервер для твоих приключений</p>
+                    <p class="footer-text">Vanilla+ сервер с уникальным сюжетом</p>
                 </div>
                 <div class="footer-section">
                     <h4 class="footer-heading">Навигация</h4>
@@ -198,6 +219,7 @@
                         <li><a href="#home">Главная</a></li>
                         <li><a href="#about">О сервере</a></li>
                         <li><a href="#donate">Донат</a></li>
+                        <li><a href="#rules">Правила</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
