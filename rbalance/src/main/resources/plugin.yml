@@ -1,0 +1,72 @@
+name: RBalance
+version: 1.0.0
+main: com.timeland.rbalance.RBalancePlugin
+api-version: '1.20'
+authors: [Timeland Team]
+description: R-Balance economy system for Timeland Minecraft server
+website: https://timeland.ru
+
+depend: []
+softdepend: []
+
+commands:
+  bal:
+    description: Manage player balances and economy
+    usage: /bal [deposit|withdraw|top|pay|history] [args]
+    aliases: [balance, money, eco]
+    permission: rbalance.user
+    permission-message: §cYou don't have permission to use this command!
+  tradecmd:
+    description: Trade command interface
+    usage: /tradecmd [buy|sell] [args]
+    aliases: [trade, t]
+    permission: rbalance.trade
+    permission-message: §cYou don't have permission to use trade commands!
+
+permissions:
+  rbalance.*:
+    description: Full access to all RBalance features
+    default: false
+    children:
+      rbalance.admin: true
+      rbalance.user: true
+      rbalance.trade: true
+  
+  rbalance.admin:
+    description: Admin permissions for RBalance
+    default: op
+    children:
+      rbalance.trade.admin: true
+      rbalance.history.other: true
+      rbalance.limit.override: true
+  
+  rbalance.user:
+    description: Basic user permissions
+    default: true
+  
+  rbalance.trade:
+    description: Trade-related permissions
+    default: true
+    children:
+      rbalance.trade.create: true
+      rbalance.trade.use: true
+  
+  rbalance.trade.create:
+    description: Allows creating trade signs
+    default: true
+  
+  rbalance.trade.use:
+    description: Allows using trade signs
+    default: true
+  
+  rbalance.trade.admin:
+    description: Allows managing other players' trade signs
+    default: op
+  
+  rbalance.history.other:
+    description: Allows viewing other players' history
+    default: op
+  
+  rbalance.limit.override:
+    description: Bypasses daily limits
+    default: op
