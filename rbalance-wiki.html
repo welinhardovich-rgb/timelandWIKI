@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="R-Balance - экономическая система сервера Timeland">
+    <title>R-Balance - Timeland Wiki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-logo">
+                <span class="logo-text">TIMELAND</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#about" class="nav-link">О сервере</a>
+                <a href="index.html#donate" class="nav-link">Донат</a>
+                <a href="index.html#rules" class="nav-link">Правила</a>
+                <a href="rbalance-wiki.html" class="nav-link active">R-Balance</a>
+                <a href="https://discord.gg/2cwh6qDW" target="_blank" class="nav-link">Discord</a>
+                <a href="https://boosty.to/timelanddev/" target="_blank" class="nav-link">Boosty</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="wiki-main">
+        <section class="wiki-hero">
+            <div class="hero-bg"></div>
+            <div class="container">
+                <h1 class="wiki-title" data-text="R-BALANCE">R-BALANCE</h1>
+                <p class="wiki-subtitle">Революционная экономическая система Timeland</p>
+            </div>
+        </section>
+
+        <section class="wiki-content">
+            <div class="container">
+                <nav class="wiki-nav">
+                    <ul class="wiki-nav-list">
+                        <li><a href="#overview" class="wiki-nav-link active">Обзор системы</a></li>
+                        <li><a href="#currencies" class="wiki-nav-link">Валюты</a></li>
+                        <li><a href="#commands" class="wiki-nav-link">Команды</a></li>
+                        <li><a href="#trading" class="wiki-nav-link">АФК-торговля</a></li>
+                        <li><a href="#commissions" class="wiki-nav-link">Комиссии</a></li>
+                        <li><a href="#limits" class="wiki-nav-link">Лимиты</a></li>
+                        <li><a href="#faq" class="wiki-nav-link">FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="wiki-content-inner">
+                    <section id="overview" class="wiki-section">
+                        <h2 class="section-title">Обзор системы R-Balance</h2>
+                        <div class="section-content">
+                            <p>R-Balance — это передовая экономическая система, разработанная специально для сервера Timeland. Она вводит мульти-валютную экономику, основанную на ресурсах Minecraft, позволяя игрокам безопасно торговать, вкладывать и переводить средства.</p>
+                            
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <div class="feature-icon">💰</div>
+                                    <h3>5 Типов валют</h3>
+                                    <p>Iron, Gold, Diamond, Netherite, Emerald — каждая с уникальными свойствами</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">⚡</div>
+                                    <h3>Мгновенные операции</h3>
+                                    <p>Депозиты, выводы и переводы происходят мгновенно с автоматическим расчетом комиссий</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">🏪</div>
+                                    <h3>АФК-торговля</h3>
+                                    <p>Создавайте торговые таблички и торгуйте даже когда оффлайн</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">🛡️</div>
+                                    <h3>Защита от абьюза</h3>
+                                    <p>Встроенные лимиты, мониторинг и система защиты от мошенничества</p>
+                                </div>
+                            </div>
+
+                            <h3>Как это работает?</h3>
+                            <p>Система преобразует ваши ресурсы в цифровой баланс, который хранится надежно в базе данных. Вы можете легко конвертировать ресурсы обратно, торговать с другими игроками, а также создавать автоматические торговые точки.</p>
+                            
+                            <div class="info-box">
+                                <h4>✨ Быстрый старт</h4>
+                                <ol>
+                                    <li>Наберите ресурсов в инвентаре</li>
+                                    <li>Введите <code>/bal deposit iron 10</code> для депозита 10 железа</li>
+                                    <li>Проверьте баланс командой <code>/bal</code></li>
+                                    <li>Попробуйте перевести другу: <code>/bal pay ИмяДруга iron 5</code></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="currencies" class="wiki-section">
+                        <h2 class="section-title">Валюты и ресурсы</h2>
+                        <div class="section-content">
+                            <p>Система поддерживает 5 типов валют, каждая привязана к реальным ресурсам Minecraft. Поддерживаются как целые слитки, так и дробные значения (самородки).</p>
+
+                            <div class="currency-table-container">
+                                <table class="currency-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Валюта</th>
+                                            <th>Символ</th>
+                                            <th>Ресурс</th>
+                                            <th>Самородок</th>
+                                            <th>Комиссия ввода</th>
+                                            <th>Комиссия вывода</th>
+                                            <th>Дневной лимит</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Iron Coin</strong></td>
+                                            <td><span class="currency-symbol">I</span></td>
+                                            <td>Iron Ingot</td>
+                                            <td>0.1 I</td>
+                                            <td>1%</td>
+                                            <td>3%</td>
+                                            <td>1000 I</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Gold Coin</strong></td>
+                                            <td><span class="currency-symbol">G</span></td>
+                                            <td>Gold Ingot</td>
+                                            <td>0.1 G</td>
+                                            <td>1.5%</td>
+                                            <td>3.5%</td>
+                                            <td>500 G</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Diamond Coin</strong></td>
+                                            <td><span class="currency-symbol">D</span></td>
+                                            <td>Diamond</td>
+                                            <td>—</td>
+                                            <td>2%</td>
+                                            <td>4%</td>
+                                            <td>100 D</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Netherite Coin</strong></td>
+                                            <td><span class="currency-symbol">N</span></td>
+                                            <td>Netherite Ingot</td>
+                                            <td>—</td>
+                                            <td>1%</td>
+                                            <td>2%</td>
+                                            <td>50 N</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Emerald Coin</strong></td>
+                                            <td><span class="currency-symbol">E</span></td>
+                                            <td>Emerald</td>
+                                            <td>0.1 E</td>
+                                            <td>0.5%</td>
+                                            <td>2.5%</td>
+                                            <td>200 E</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="info-box warning">
+                                <h4>⚠️ Важно!</h4>
+                                <ul>
+                                    <li>Минимальная сумма операции: <strong>0.1</strong> для всех валют</li>
+                                    <li>9 самородков = 0.9 слитка (не 1.0)</li>
+                                    <li>Комиссии округляются до 2 знаков после запятой</li>
+                                    <li>Сожженные комиссии учитываются в балансе сервера</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="commands" class="wiki-section">
+                        <h2 class="section-title">Команды баланса</h2>
+                        <div class="section-content">
+                            <p>Все команды начинаются с <code>/bal</code> или <code>/balance</code>. Система поддерживает сокращения валют (I, G, D, N, E).</p>
+
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-header">
+                                        <code class="command">/bal</code>
+                                        <span class="permission">rbalance.user</span>
+                                    </div>
+                                    <p class="description">Показывает ваш текущий баланс по всем валютам</p>
+                                </div>
+
+                                <div class="command-item">
+                                    <div class="command-header">
+                                        <code class="command">/bal deposit &lt;ресурс&gt; &lt;кол-во&gt;</code>
+                                        <span class="permission">rbalance.user</span>
+                                    </div>
+                                    <p class="description">Вносит ресурсы с инвентаря на баланс</p>
+                                    <div class="examples">
+                                        <h5>Примеры:</h5>
+                                        <ul>
+                                            <li><code>/bal deposit iron 10</code> → внести 10 железа</li>
+                                            <li><code>/bal deposit G 5.5</code> → внести 5.5 золота</li>
+                                            <li><code>/bal deposit D 1</code> → внести 1 алмаз</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="command-item">
+                                    <div class="command-header">
+                                        <code class="command">/bal withdraw &lt;ресурс&gt; &lt;кол-во&gt;</code>
+                                        <span class="permission">rbalance.user</span>
+                                    </div>
+                                    <p class="description">Выводит ресурсы с баланса в инвентарь (с комиссией)</p>
+                                    <div class="examples">
+                                        <h5>Примеры:</h5>
+                                        <ul>
+                                            <li><code>/bal withdraw iron 20</code> → вывести 20 железа (комиссия 3%)</li>
+                                            <li><code>/bal withdraw N 1</code> → вывести 1 незерит (комиссия 2%)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="command-item">
+                                    <div class="command-header">
+                                        <code class="command">/bal top [ресурс]</code>
+                                        <span class="permission">rbalance.user</span>
+                                    </div>
+                                    <p class="description">Показывает топ-10 игроков по указанной валюте</p>
+                                    <div class="examples">
+                                        <h5>Примеры:</h5>
+                                        <ul>
+                                            <li><code>/bal top</code> → топ по железу (по умолчанию)</li>
+                                            <li><code>/bal top gold</code> → топ по золоту</li>
+                                            <li><code>/bal top D</code> → топ по алмазам</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="command-item">
+                                    <div class="command-header">
+                                        <code class="command">/bal pay &lt;ник&gt; &lt;ресурс&gt; &lt;кол-во&gt;</code>
+                                        <span class="permission">rbalance.user</span>
+                                    </div>
+                                    <p class="description">Переводит ресурсы другому игроку (комиссия 1%)</p>
+                                    <div class="examples">
+                                        <h5>Примеры:</h5>
+                                        <ul>
+                                            <li><code>/bal pay Notch iron 50</code> → перевести 50 железа игроку Notch</li>
+                                            <li><code>/bal pay Friend G 10.5</code> → перевести 10.5 золота</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="command-item">
+                                    <div class="command-header">
+                                        <code class="command">/bal history [other &lt;ник&gt;]</code>
+                                        <span class="permission">rbalance.user / rbalance.history.other</span>
+                                    </div>
+                                    <p class="description">Показывает историю ваших операций (последние 10)</p>
+                                    <div class="examples">
+                                        <h5>Примеры:</h5>
+                                        <ul>
+                                            <li><code>/bal history</code> → ваша история</li>
+                                            <li><code>/bal history other Notch</code> → история игрока Notch (требуются права)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <h4>💡 Профессиональные советы</h4>
+                                <ul>
+                                    <li>Используйте сокращения: <code>/bal d I 10</code> вместо <code>/bal deposit iron 10</code></li>
+                                    <li>Комбинируйте команды: <code>/bal</code> → проверьте баланс → <code>/bal pay ...</code></li>
+                                    <li>Для больших переводов используйте золото или изумруды (меньше комиссия)</li>
+                                    <li>Следите за топом: <code>/bal top emerald</code> покажет богатейших!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="trading" class="wiki-section">
+                        <h2 class="section-title">АФК-торговля через таблички</h2>
+                        <div class="section-content">
+                            <p>Система позволяет создавать автоматические торговые точки, которые работают 24/7, даже когда вы оффлайн. Идеально для магазинов и автоматизированной торговли!</p>
+
+                            <h3>Как создать торговую табличку</h3>
+                            <div class="sign-tutorial">
+                                <div class="sign-preview">
+                                    <div class="sign-lines">
+                                        <div class="sign-line">[Trade]</div>
+                                        <div class="sign-line">ВашНик</div>
+                                        <div class="sign-line">Iron x10</div>
+                                        <div class="sign-line">S:4I / B:2I</div>
+                                    </div>
+                                </div>
+                                <div class="sign-explanation">
+                                    <h4>Разбор формата:</h4>
+                                    <ul>
+                                        <li><strong>Строка 1:</strong> <code>[Trade]</code> — идентификатор таблички</li>
+                                        <li><strong>Строка 2:</strong> Ваш никнейм (автоматически проверяется)</li>
+                                        <li><strong>Строка 3:</strong> <code>Ресурс xКоличество</code> что продаете</li>
+                                        <li><strong>Строка 4:</strong> <code>S:ЦенаПродажи / B:ЦенаПокупки</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Примеры табличек</h3>
+                            <div class="example-grid">
+                                <div class="example-card">
+                                    <h4>Продажа железа (выгодно покупателю)</h4>
+                                    <div class="sign-example">
+                                        <div class="sign-line">[Trade]</div>
+                                        <div class="sign-line">Notch</div>
+                                        <div class="sign-line">Iron x64</div>
+                                        <div class="sign-line">S:32I / B:28I</div>
+                                    </div>
+                                    <p class="description">64 железа за 32 (выгодная цена)</p>
+                                </div>
+
+                                <div class="example-card">
+                                    <h4>Обмен золото → алмазы</h4>
+                                    <div class="sign-example">
+                                        <div class="sign-line">[Trade]</div>
+                                        <div class="sign-line">Notch</div>
+                                        <div class="sign-line">Diamond x1</div>
+                                        <div class="sign-line">S:8G / B:6G</div>
+                                    </div>
+                                    <p class="description">1 алмаз за 8 золота (рыночная цена)</p>
+                                </div>
+
+                                <div class="example-card">
+                                    <h4>Продажа незерита (премиум)</h4>
+                                    <div class="sign-example">
+                                        <div class="sign-line">[Trade]</div>
+                                        <div class="sign-line">Notch</div>
+                                        <div class="sign-line">Netherite x1</div>
+                                        <div class="sign-line">S:64D / B:60D</div>
+                                    </div>
+                                    <p class="description">1 незерит за 64 алмазов</p>
+                                </div>
+
+                                <div class="example-card">
+                                    <h4>Магазин изумрудов</h4>
+                                    <div class="sign-example">
+                                        <div class="sign-line">[Trade]</div>
+                                        <div class="sign-line">Notch</div>
+                                        <div class="sign-line">Emerald x32</div>
+                                        <div class="sign-line">S:16I / B:14I</div>
+                                    </div>
+                                    <p class="description">1 изумруд = 0.5 железа (эконом-вариант)</p>
+                                </div>
+                            </div>
+
+                            <h3>Защита и ограничения</h3>
+                            <div class="protection-rules">
+                                <ul>
+                                    <li><strong>Только в вашем чанке</strong> — таблички работают только на территории, где у вас есть права</li>
+                                    <li><strong>UUID привязка</strong> — каждая табличка привязана к вашему аккаунту</li>
+                                    <li><strong>Авто-отключение</strong> — если баланс продавца = 0, табличка неактивна</li>
+                                    <li><strong>Логирование</strong> — все сделки записываются в историю</li>
+                                    <li><strong>Право владельца</strong> — только вы можете сломать свою табличку</li>
+                                </ul>
+                            </div>
+
+                            <div class="info-box warning">
+                                <h4>⚠️ Табличка не работает?</h4>
+                                <ul>
+                                    <li>Проверьте, что у вас достаточно средств на балансе</li>
+                                    <li>Убедитесь, что табличка в вашем чанке</li>
+                                    <li>Проверьте формат (особенно строки 1 и 4)</li>
+                                    <li>Убедитесь, что вы онлайн (для первой сделки)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="commissions" class="wiki-section">
+                        <h2 class="section-title">Комиссии и сборы</h2>
+                        <div class="section-content">
+                            <p>Система R-Balance использует комиссии для баланса экономики и предотвращения эксплуатации. Все комиссии прозрачны и отображаются до совершения операции.</p>
+
+                            <h3>Типы комиссий</h3>
+                            <div class="commission-types">
+                                <div class="commission-card">
+                                    <h4>Ввод средств (Deposit)</h4>
+                                    <div class="rate">0% — 2%</div>
+                                    <p>Комиссия за ввод ресурсов в систему. Зависит от типа валюты:</p>
+                                    <ul>
+                                        <li>Iron: 1%</li>
+                                        <li>Gold: 1.5%</li>
+                                        <li>Diamond: 2%</li>
+                                        <li>Netherite: 1%</li>
+                                        <li>Emerald: 0.5%</li>
+                                    </ul>
+                                </div>
+
+                                <div class="commission-card">
+                                    <h4>Вывод средств (Withdraw)</h4>
+                                    <div class="rate">2% — 5%</div>
+                                    <p>Комиссия за вывод ресурсов из системы:</p>
+                                    <ul>
+                                        <li>Iron: 3%</li>
+                                        <li>Gold: 3.5%</li>
+                                        <li>Diamond: 4%</li>
+                                        <li>Netherite: 2%</li>
+                                        <li>Emerald: 2.5%</li>
+                                    </ul>
+                                </div>
+
+                                <div class="commission-card">
+                                    <h4>Переводы (Transfer)</h4>
+                                    <div class="rate">1%</div>
+                                    <p>Фиксированная комиссия за переводы между игроками:</p>
+                                    <ul>
+                                        <li>Все валюты: 1%</li>
+                                        <li>Минимум: 0.01 монет</li>
+                                        <li>Максимум: не ограничен</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Куда идут комиссии?</h3>
+                            <p>Все комиссии начисляются на специальный серверный счет. Эти средства могут быть использованы для:</p>
+                            <ul>
+                                <li>Ивентов и конкурсов</li>
+                                <li>Вознаграждений за достижения</li>
+                                <li>Экономических стимулов</li>
+                                <li>Поддержания инфляции</li>
+                            </ul>
+
+                            <h3>Примеры расчета</h3>
+                            <div class="calculation-examples">
+                                <div class="calc-example">
+                                    <h5>Депозит 100 железа</h5>
+                                    <div class="calc-steps">
+                                        <div class="step">Сумма: <span class="value">100.00 I</span></div>
+                                        <div class="step">Комиссия (1%): <span class="value fee">-1.00 I</span></div>
+                                        <div class="step result">На балансе: <span class="value final">99.00 I</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="calc-example">
+                                    <h5>Перевод 50 золота</h5>
+                                    <div class="calc-steps">
+                                        <div class="step">Сумма: <span class="value">50.00 G</span></div>
+                                        <div class="step">Комиссия (1%): <span class="value fee">-0.50 G</span></div>
+                                        <div class="step result">Получит игрок: <span class="value final">49.50 G</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="calc-example">
+                                    <h5>Вывод 10 алмазов</h5>
+                                    <div class="calc-steps">
+                                        <div class="step">Сумма: <span class="value">10.00 D</span></div>
+                                        <div class="step">Комиссия (4%): <span class="value fee">-0.40 D</span></div>
+                                        <div class="step result">В инвентаре: <span class="value final">9.60 D</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="limits" class="wiki-section">
+                        <h2 class="section-title">Лимиты и защита</h2>
+                        <div class="section-content">
+                            <p>Для защиты экономики и предотвращения абуза система имеет встроенные лимиты и ограничения.</p>
+
+                            <h3>Дневные лимиты депозита</h3>
+                            <table class="limits-table">
+                                <thead>
+                                    <tr>
+                                        <th>Валюта</th>
+                                        <th>Лимит в день</th>
+                                        <th>Приблизительная стоимость</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Iron (I)</td>
+                                        <td>1,000</td>
+                                        <td>~11 сундуков железа</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gold (G)</td>
+                                        <td>500</td>
+                                        <td>~8 сундуков золота</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diamond (D)</td>
+                                        <td>100</td>
+                                        <td>~2 сундука алмазов</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Netherite (N)</td>
+                                        <td>50</td>
+                                        <td>50 слитков незерита</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Emerald (E)</td>
+                                        <td>200</td>
+                                        <td>~4 сундука изумрудов</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h3>Ограничения безопасности</h3>
+                            <div class="safety-limits">
+                                <div class="limit-item">
+                                    <h4>Минимальная операция</h4>
+                                    <p><strong>0.1</strong> для всех валют</p>
+                                    <p>Защита от спама нулевыми транзакциями</p>
+                                </div>
+
+                                <div class="limit-item">
+                                    <h4>Максимум операций</h4>
+                                    <p><strong>10 в минуту</strong> на игрока</p>
+                                    <p>Защита от автоматизированного абуза</p>
+                                </div>
+
+                                <div class="limit-item">
+                                    <h4>Кулдаун</h4>
+                                    <p><strong>5 секунд</strong> между операциями</p>
+                                    <p>Предотвращает случайные двойные клики</p>
+                                </div>
+
+                                <div class="limit-item">
+                                    <h4>Максимум табличек</h4>
+                                    <p><strong>10</strong> на одного игрока</p>
+                                    <p>Ограничение для предотвращения лагов</p>
+                                </div>
+                            </div>
+
+                            <h3>Система мониторинга</h3>
+                            <p>Все подозрительные активности автоматически логируются и анализируются:</p>
+                            <ul>
+                                <li>Необычно большие транзакции (отклонение >3σ)</li>
+                                <li>Частые операции (превышение лимитов)</li>
+                                <li>Переводы на одни и те же аккаунты</li>
+                                <li>Попытки использования багов</li>
+                            </ul>
+
+                            <div class="info-box info">
+                                <h4>ℹ️ Как узнать свой лимит?</h4>
+                                <p>Используйте команду <code>/bal history</code> и смотрите на суммы депозитов за сегодня. Дневной счетчик сбрасывается каждые 24 часа.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="faq" class="wiki-section">
+                        <h2 class="section-title">Частые вопросы</h2>
+                        <div class="section-content">
+                            <div class="faq-list">
+                                <div class="faq-item">
+                                    <h4 class="question">Почему мой депозит не работает?</h4>
+                                    <div class="answer">
+                                        <p>Проверьте следующее:</p>
+                                        <ul>
+                                            <li>Есть ли ресурсы в инвентаре (слитки/самородки)?</li>
+                                            <li>Не превышен ли дневной лимит? (<code>/bal history</code>)</li>
+                                            <li>Правильно ли написано название валюты? (I, G, D, N, E)</li>
+                                            <li>Минимум 0.1 — вы не пытаетесь внести меньше?</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item">
+                                    <h4 class="question">Сколько будет стоить перевести 100 железа?</h4>
+                                    <div class="answer">
+                                        Комиссия фиксированная 1% для всех переводов:
+                                        <ul>
+                                            <li>Вы переводите: <strong>100.00 I</strong></li>
+                                            <li>Комиссия: <strong>1.00 I</strong></li>
+                                            <li>Получатель получит: <strong>99.00 I</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item">
+                                    <h4 class="question">Можно ли отменить транзакцию?</h4>
+                                    <div class="answer">
+                                        <p><strong>Нет, все транзакции необратимы.</strong> Это сделано для безопасности системы. Пожалуйста, дважды проверяйте суммы и получателя перед подтверждением.</p>
+                                        <p>Исключение: если произошел сбой сервера во время операции — обратитесь к администратору.</p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item">
+                                    <h4 class="question">Зачем нужны комиссии?</h4>
+                                    <div class="answer">
+                                        Комиссии выполняют несколько важных функций:
+                                        <ul>
+                                            <li><strong>Баланс экономики</strong> — предотвращают инфляцию</li>
+                                            <li><strong>Защита от спама</strong> — делают массовые операции невыгодными</li>
+                                            <li><strong>Фонд сервера</strong> — средства идут на ивенты и награды</li>
+                                            <li><strong>Реализм</strong> — имитируют реальную экономику</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item">
+                                    <h4 class="question">Когда сбрасываются дневные лимиты?</h4>
+                                    <div class="answer">
+                                        <p>Лимиты сбрасываются ровно через 24 часа после первого депозита. Например:</p>
+                                        <ul>
+                                            <li>Вы внесли первый депозит в 15:30</li>
+                                            <li>Следующий сброс в <strong>15:30 следующего дня</strong></li>
+                                            <li>Индивидуальный таймер для каждого игрока</li>
+                                        </ul>
+                                        <p>Используйте <code>/bal history</code> чтобы отслеживать.</p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item">
+                                    <h4 class="question">Можно ли заблокировать доступ к моим табличкам?</h4>
+                                    <div class="answer">
+                                        <p>Да, несколько способов:</p>
+                                        <ul>
+                                            <li><strong>Физическая защита</strong> — постройте стены или используйте приваты</li>
+                                            <li><strong>Ограничение по чанку</strong> — таблички работают только в ваших чанках</li>
+                                            <li><strong>Нулевой баланс</strong> — если убрать все деньги, табличка станет неактивной</li>
+                                            <li><strong>Сломать табличку</strong> — только вы можете сломать свою табличку</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item">
+                                    <h4 class="question">Что будет если сервер упадет во время транзакции?</h4>
+                                    <div class="answer">
+                                        <p>Система имеет <strong>защиту от сбоев</strong>:</p>
+                                        <ul>
+                                            <li>Атомарные операции — либо выполняются полностью, либо откатываются</li>
+                                            <li>Авто-сохранение каждые 5 минут</li>
+                                            <li>Резервные копии каждый час</li>
+                                            <li>При сбое восстанавливается последнее корректное состояние</li>
+                                        </ul>
+                                        <p>Если вы заметили несоответствие — немедленно сообщите администратору!</p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item">
+                                    <h4 class="question">Какая валюта самая выгодная для хранения?</h4>
+                                    <div class="answer">
+                                        <p>Это зависит от ваших целей:</p>
+                                        <ul>
+                                            <li><strong>Emerald (E)</strong> — самая низкая комиссия (0.5%/2.5%)</li>
+                                            <li><strong>Netherite (N)</strong> — компактная, высокая ценность, низкая комиссия</li>
+                                            <li><strong>Iron (I)</strong> — стабильная, ликвидная, умеренная комиссия</li>
+                                            <li><strong>Gold (G)</strong> — средняя по всем параметрам</li>
+                                        </ul>
+                                        <p><strong>Совет:</strong> для долгосрочного хранения используйте Emerald или Netherite. Для активной торговли — Iron.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info-box help">
+                                <h4>🆘 Не нашли ответ?</h4>
+                                <p>Задать вопрос можно в <strong>Discord</strong> канале #support или написать администратору в игре.</p>
+                                <p>При сообщении о проблеме указывайте: никнейм, время, команду, ожидаемый и фактический результат.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Timeland</h3>
+                    <p>Vanilla+ сервер с модами и собственным сюжетом</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Ссылки</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="index.html#rules">Правила</a></li>
+                        <li><a href="rbalance-wiki.html">R-Balance Wiki</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Сообщество</h4>
+                    <ul>
+                        <li><a href="https://discord.gg/2cwh6qDW" target="_blank">Discord</a></li>
+                        <li><a href="https://boosty.to/timelanddev/" target="_blank">Boosty</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Timeland. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.wiki-nav-link');
+            const sections = document.querySelectorAll('.wiki-section');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        sections.forEach(s => s.classList.remove('active'));
+                        targetSection.classList.add('active');
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

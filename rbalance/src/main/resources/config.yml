@@ -1,0 +1,62 @@
+economy:
+  currencies:
+    iron:
+      enabled: true
+      deposit-commission: 1.0
+      withdraw-commission: 3.0
+      daily-limit: 1000
+      min-operation: 0.1
+    gold:
+      enabled: true
+      deposit-commission: 1.5
+      withdraw-commission: 3.5
+      daily-limit: 500
+      min-operation: 0.1
+    diamond:
+      enabled: true
+      deposit-commission: 2.0
+      withdraw-commission: 4.0
+      daily-limit: 100
+      min-operation: 0.1
+    netherite:
+      enabled: true
+      deposit-commission: 1.0
+      withdraw-commission: 2.0
+      daily-limit: 50
+      min-operation: 0.1
+      unlock-requirement: "PLAYTIME_24H"
+    emerald:
+      enabled: true
+      deposit-commission: 0.5
+      withdraw-commission: 2.5
+      daily-limit: 200
+      min-operation: 0.1
+
+trade:
+  enabled: true
+  chunk-owner-required: true
+  max-signs-per-player: 10
+  min-trade-amount: 0.1
+
+protection:
+  max-operations-per-minute: 10
+  cooldown-seconds: 5
+  log-suspicious-activity: true
+
+logging:
+  history-enabled: true
+  max-history-entries: 1000
+  log-to-console: true
+  log-to-file: true
+
+database:
+  type: "YAML"
+  yaml:
+    data-folder: "data"
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "rbalance"
+    username: "root"
+    password: ""
+    use-ssl: false
